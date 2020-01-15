@@ -1,5 +1,15 @@
 version: '2'
 services: 
+  nginx:
+    image: nginx:stable
+    ports: 
+      - "8080:80"
+    depends_on: 
+      - php
+    volumes_from: 
+      - php
+    volumes: 
+      - ./images/nginx/config:/etc/nginx/conf.d
   php:
     image: php:7.3-fpm
     volumes: 
