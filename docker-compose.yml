@@ -1,5 +1,9 @@
 version: '2'
 services: 
+  php:
+    image: php:7.3-fpm
+    volumes: 
+      - ./app:/mnt/app
   db:
     image: mysql:5
     environment: 
